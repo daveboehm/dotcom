@@ -1,0 +1,133 @@
+/* Navigation */
+
+@active: 30px;
+@activeborder: @active + 1;
+@media screen and(min-width: 0px) {
+
+	nav {
+		&#navigation {
+			border-bottom: 1px solid @gray2;
+
+			ul {
+				list-style-type: none;
+				padding: 0;
+				margin: 0;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				width: 100%;
+
+				li {
+					width: 100%;
+					color: @gray2;
+					font-size: 20px;
+					font-family: @sans;
+					display: inline-block;
+					position: relative;
+					margin-top: 20px;
+
+					a, a:link, a:visited {
+						padding: 1rem;
+						color: inherit;
+						font-size: 1.5rem;
+						font-family: inherit;
+						text-decoration: none;
+						border: 1px dotted transparent;
+						&.active {
+							color: @green;
+							/*text-decoration: underline;*/
+							&:after {
+								margin-top: @active / 3;
+								width: 0;
+								height: 0;
+								position: absolute;
+								right: -1px;
+								top: 1px;
+								content: '';
+								border-style: solid;
+								border-width: @active @active @active 0;
+								border-color: transparent @white transparent transparent;
+							}
+							&:before {
+								margin-top: @active / 3;
+								width: 0;
+								height: 0;
+								position: absolute;
+								right: 0;
+								top: 0;
+								content: '';
+								border-style: solid;
+								border-width: @activeborder @activeborder @activeborder 0;
+								border-color: transparent #eee transparent transparent;
+							}
+						}
+					}
+					a:hover, a:focus {
+						color: @gray1;
+						.transition(@fast);
+					}
+					a:active {
+						color: @gray1*0.8;
+					}
+				}
+			}
+		}
+	}
+/* ============================================================================ */
+}
+
+@media screen and(min-width: @breakpoint) {
+
+	nav {
+		&#navigation {
+			border-bottom: 0 none;
+			border-right: 1px solid @gray4;
+			position: absolute;
+			height: 100%;
+			width: 200px;
+			/*display: flex;*/
+			display:block;
+			position: fixed;
+			top:0;
+			left:0;
+			
+			ul {
+				/*display: flex;
+				flex-direction: column;
+				justify-content: center; */
+				display:block;
+				padding-top: 4rem;
+
+				li {
+					padding: 1.5rem;
+					width: 100%;
+					margin-top: 0;
+				}
+			}
+		}
+	}
+/* ============================================================================ */	
+}
+
+@media screen and (max-width: @breakpoint) {
+	nav {
+		&#navigation {
+			ul {
+				li {
+					a, a:link, a:visited{ 
+						&.active {
+							color: @green;
+							/*text-decoration: underline;*/
+							&:after {
+								display: none;
+							}
+							&:before {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

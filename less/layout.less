@@ -1,0 +1,46 @@
+/* Main Content Area */
+
+@media screen and(min-width: 0px) {
+	main {
+		&#main-content {
+			padding: 0 1rem;
+		}
+
+		section {
+			max-width: 800px;
+			padding-bottom: 40px;
+		}
+	}
+/* ============================================================================ */		
+}
+
+@media screen and(min-width: @breakpoint) {
+	main {
+		&#main-content {
+			margin-left: 200px;
+			padding: 4rem;
+		}
+	}
+}
+
+/* Footer */
+
+@media screen and(min-width: 0px) {
+	footer {
+		position: fixed;
+		bottom: 0px;
+		right: 10px;
+		color: @gray2;
+		font-size: 0.8rem;
+		font-family: @sans;
+		background: @white;
+		padding:5px;
+	}
+}
+
+@media screen and(min-width: @breakpoint) {
+	footer {
+		right: auto;
+		left: 10px;
+	}
+}

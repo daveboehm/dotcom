@@ -1,0 +1,21 @@
+@duration: 300ms;
+.ng-animate {
+	-webkit-transition: opacity ease-in @duration;
+	-o-transition: opacity ease-in @duration;
+	transition: opacity ease-in @duration;
+}
+.ng-enter {
+	display: block;
+	.opacity(0);
+}
+.ng-enter-active {
+	.opacity(1);
+}
+.ng-leave {
+	display: none;
+	.opacity(0);
+}
+.ng-leave-active {
+	display: none;
+	.opacity(0);
+}

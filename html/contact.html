@@ -1,0 +1,48 @@
+<h1>Contact</h1>
+<section>
+	<form novalidate method="POST" name="contactform" ng-controller="contactController" ng-submit="submitform()" role="form">
+		<p ng-show="submitted && success">Thanks, I'll be in touch soon.</p>
+		<p ng-show="submitted && error">Uh oh. This is all screwed up.</p>
+		<fieldset ng-hide="submitted && success">
+
+			<!-- ====================================================================== -->
+			<!-- Name -->
+			<div class="group">
+				<label for="name" ng-class="{error:contactform.name.$touched && contactform.name.$invalid}">Name:* 
+					<span class="errors" ng-show="contactform.name.$touched && contactform.name.$invalid">
+						<small ng-show="contactform.name.$error.required">{{errors.required}}</small>
+					</span>
+				</label>
+				<input type="text" id="name" name="name" required ng-model="user.name" placeholder="First Name Last Name">
+			</div>
+
+			<!-- ====================================================================== -->
+			<!-- Email -->
+			<div class="group">
+				<label for="email" ng-class="{error:contactform.email.$touched && contactform.email.$invalid}">Email:* 
+					<span class="errors" ng-show="contactform.email.$touched && contactform.email.$invalid">
+						<small ng-show="contactform.email.$error.required">{{errors.required}}</small>
+						<small ng-show="contactform.email.$error.email">{{errors.format}}</small>
+					</span>
+				</label>
+				<input type="email" id="email" name="email" required ng-model="user.email" placeholder="email@domain.com">
+			</div>
+
+			<!-- ====================================================================== -->
+			<!-- Message -->
+			<div class="group">
+				<label for="message" ng-class="{error: contactform.message.$touched && contactform.message.$invalid}">Message:* 
+					<span class="errors" ng-show="contactform.message.$touched && contactform.message.$invalid">
+						<small ng-show="contactform.message.$error.required">{{errors.required}}</small>
+					</span>
+				</label>
+				<textarea id="message" name="message" required ng-model="user.message" placeholder="Words words words"></textarea>
+			</div>
+
+			<!-- ====================================================================== -->
+			<!-- Submit -->
+			<button class="form-button" name="submit" type="submit" ng-disabled="contactform.$invalid">Send</button>
+
+		</fieldset>
+	</form>
+</section>

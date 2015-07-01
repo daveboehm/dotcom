@@ -1,0 +1,94 @@
+::-webkit-input-placeholder { 	font-style: italic !important; font-weight: lighter;}
+::-moz-placeholder { 			font-style: italic !important; font-weight: lighter;} /* firefox 19+ */
+:-ms-input-placeholder { 		font-style: italic !important; font-weight: lighter;} /* ie */
+input:-moz-placeholder { 		font-style: italic !important; font-weight: lighter;}
+
+.group {
+	margin-bottom: 20px;
+}
+.errors, .error {
+	color: @red;
+}
+#notabot {
+	display: none;
+	pointer-events: none;
+}
+fieldset {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+input, textarea {
+	border: 0 none;
+	padding: 0.5rem;
+	font-size: 16px;
+	font-family: @sans;
+	font-weight: 300;
+	color: @gray2;
+	width: 100%;
+	margin: 0 0 0rem 0px;
+	border: 1px solid @gray4;
+	&:focus {
+		outline: 0 none;
+		border: 1px solid @gray3;
+	}
+}
+
+label {
+	width: 100%;
+	font-size: 16px;
+	padding: 0.5rem;
+
+	.errors {
+		color: @red;
+		float: right;
+	}
+}
+textarea {
+	resize: vertical;
+	min-height: 160px;
+}
+
+.form-button {
+	display: block;
+}
+button {
+	border: 1px solid @green * 0.9;
+	background: @green;
+	padding: 0.5rem;
+	font-size: 16px;
+	font-family: @sans;
+	font-weight: 200;
+	color: @white;
+	width: 160px;
+	&:hover, &:focus {
+		background: @green * 0.8;
+		.transition(@fast);
+		outline: 0 none;
+	}
+	&:active {
+		background: @green * 0.8;
+	}
+
+}
+input, textarea {
+	&.ng-invalid,
+	&.ng-invalid.ng-touched { border-color: @red; }
+	&.ng-valid,
+	&.ng-valid.ng-touched { border-color: @green; }
+	&.ng-pristine { border-color: @gray4; }
+	&.ng-dirty { border-color: @gray3; }
+}
+
+[disabled] {
+	.opacity(0.5);
+	background: @gray4;
+	color: @gray2;
+	border-color: @gray3;
+	&:hover, &:focus, &:active {
+		.opacity(0.5);
+		background: @gray4;
+		color: @gray2;
+		border-color: @gray3;
+	}
+}
