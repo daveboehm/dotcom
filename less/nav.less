@@ -5,6 +5,7 @@
 @media screen and(min-width: 0px) {
 
 	nav {
+		margin-bottom: 10px;
 		&#navigation {
 			border-bottom: 1px solid @gray2;
 
@@ -35,7 +36,6 @@
 						border: 1px dotted transparent;
 						&.active {
 							color: @green;
-							/*text-decoration: underline;*/
 							&:after {
 								margin-top: @active / 3;
 								width: 0;
@@ -85,16 +85,12 @@
 			position: absolute;
 			height: 100%;
 			width: 200px;
-			/*display: flex;*/
 			display:block;
 			position: fixed;
 			top:0;
 			left:0;
 			
 			ul {
-				/*display: flex;
-				flex-direction: column;
-				justify-content: center; */
 				display:block;
 				padding-top: 4rem;
 
@@ -117,7 +113,6 @@
 					a, a:link, a:visited{ 
 						&.active {
 							color: @green;
-							/*text-decoration: underline;*/
 							&:after {
 								display: none;
 							}
